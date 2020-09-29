@@ -1,0 +1,13 @@
+[Unit]
+Description=Check Phone Online Domoticz
+Wants=network-online.target
+After=network-online.target
+ 
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/pi/python/check_phone_online.py
+Restart=always
+ 
+[Install]
+WantedBy=multi-user.target
+

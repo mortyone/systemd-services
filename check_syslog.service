@@ -1,0 +1,14 @@
+[Unit]
+Description=check my logs for security breaches ssh/vnc/pwd etc
+Wants=network-online.target
+After=network-online.target
+ 
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/pi/python/check_syslogs.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
